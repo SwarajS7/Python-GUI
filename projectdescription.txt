@@ -1,0 +1,36 @@
+The provided code is a GUI application that allows users to search for information about UEFA Champions League (UCL) winners and runner-ups. It uses the Tkinter library to create the graphical interface and MySQL for database connectivity. Let's go through a detailed description of the code:
+
+1. Importing Libraries:
+   - `mysql.connector` is imported as `m` for establishing a connection with the MySQL database.
+   - `tkinter` is imported as `tk` and `*` is used to import all its components for creating the GUI.
+   - `ImageTk` and `Image` from the PIL (Python Imaging Library) are imported for displaying images in the GUI.
+   - `webbrowser` is imported to open web links.
+
+2. Function Definitions:
+   - `search_club()`: This function is called when the "Search" button is clicked. It retrieves the club name entered by the user from the entry field. It then executes a SQL query to search the database for UCL winners whose names match the entered club name. The results are fetched and displayed in the result text box. If no results are found, a message indicating that no result is found is displayed.
+   - `year_winners()`: This function is called when the "Years" button is clicked. It retrieves the year entered by the user from the entry field. It executes a SQL query to search the database for UCL winners and runner-ups for the entered year. The results are fetched and displayed in the result text box. If no results are found, a message indicating that no result is found is displayed.
+   - `runners_club()`: This function is called when the "Runner-ups" button is clicked. It retrieves the club name entered by the user from the entry field. It executes a SQL query to search the database for UCL runner-ups whose names match the entered club name. The results are fetched and displayed in the result text box. If no results are found, a message indicating that no result is found is displayed.
+   - `link()`: This function is called when the "UEFA Stats" button is clicked. It opens a web link to the UEFA official document using the `webbrowser` module.
+   - `link2()`: This function is called when the "History" button is clicked. It opens a web link to the UEFA Champions League history page using the `webbrowser` module.
+   - `newentry()`: This function is called when the "Add New Entry" button is clicked. It retrieves the year, champions, and runner-up entered by the user from the respective entry fields. It executes a SQL query to insert the new entry into the database. If the insertion is successful, a message indicating that the new entry is added is displayed in the result text box.
+   - `close()`: This function is called when the "Close" button is clicked. It closes the database connection and terminates the application.
+
+
+
+3. Database Connection:
+   - A connection to a MySQL database named "UCL" is established using the `mysql.connector` library. The connection parameters include the host, username, password, and database name.
+   - A cursor object is created to execute SQL queries.
+
+
+
+4. GUI Creation:
+   - An instance of the Tkinter window is created with the title "UCL Search App" and a size of 900x700 pixels.
+   - The window background color is set to "lightgrey".
+
+
+
+5. Input Frame:
+   - A frame is created to hold the input-related components.
+   - A label is added to the frame to prompt the user to enter a club name, year, or runner-up.
+   - An entry field is provided for the user to enter the search query.
+   - A "Search
